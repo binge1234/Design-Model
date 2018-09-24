@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>工厂方法页面</title>
+     <link th:href="@{/bootstrap3/css/bootstrap.min.css}" rel="stylesheet" />
+    <script type="text/javascript" src="../static/jquery-3.3.1.js" th:src="@{/jquery-3.3.1.js}"></script>
+    <script type="text/javascript" src="../static/bootstrap3/js/jquery-1.11.2.min.js" th:src="@{/bootstrap3/js/jquery-1.11.2.min.js.js}"></script>
+    <script>
+      $(function(){
+    	  $("#b1").click(function(){
+    	        var url="factory/ordinaryfactory/Circle";
+    	        $.get(
+    	                url,
+    	                function(data) {
+    	                	
+    	                     $("#content").html("Circle工厂已经生产出"+data);
+    	                        
+    	         }); 
+    	    });
+    		  
+    	  
+       	  $("#b2").click(function(){
+  	        var url="factory/simplefactory/Rectangle";
+	        
+	        $.get(
+	                url,
+	                function(data) {
+	                     $("#content").html("Rectangle工厂已经生产出"+data);
+	                        
+	         }); 
+     		  
+     	  });
+      })
+    </script>
+    
+    <style>
+    div{
+    margin-top:15px;
+    }
+    #div1{
+      position: absolute;
+      left: 100px;
+      top: 50px;
+     
+    }
+    button{
+    width:100px;
+    margin-right:10px;
+    
+    }
+    #content{
+    font-size:20px;
+    left:100px;
+    }
+    .text-primary{
+    font-size:20px;
+    }
+    #img{
+    position:absolute;
+    left:400px;
+    top:10px;
+    }
+    </style>
+</head>
+
+<body>
+
+<div id="img">
+<div><img src="../static/image/lzb.jpg"  th:src="@{/image/lzb.jpg}" width="300" height="300" /></div>
+<div><span class="text-primary" >201527010413 李志彬</span></div>
+</div>
+
+
+
+
+
+<div id="div1">
+<div><span class="text-primary" >工厂方法页面</span></div>
+<button type="button" class="btn btn-default" id="b1">1&nbsp;&nbsp; Cirlce</button>
+<button type="button" class="btn btn-default" id="b2">1&nbsp;&nbsp; Rectangle</button>
+
+
+
+
+<div>
+<span class="text-primary" id = "content">没有任何形状产生</span>
+</div>
+</div>
+
+
+
+
+  
+</body>
+</html>

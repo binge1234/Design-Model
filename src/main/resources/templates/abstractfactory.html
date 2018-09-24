@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>抽象工厂页面</title>
+     <link th:href="@{/bootstrap3/css/bootstrap.min.css}" rel="stylesheet" />
+    <script type="text/javascript" src="../static/jquery-3.3.1.js" th:src="@{/jquery-3.3.1.js}"></script>
+    <script type="text/javascript" src="../static/bootstrap3/js/jquery-1.11.2.min.js" th:src="@{/bootstrap3/js/jquery-1.11.2.min.js.js}"></script>
+    <script>
+    $(function(){
+    	 $("#b1").click(function(){
+    		  alert("1231");
+    		 var url="factory/abstractfactory";
+    		 var title=$("#select").find("option:selected").val();
+    		alert(title);
+    		 var thing = "Phone";
+    		$.get(
+  	                url,
+  	                {
+  	                	product:thing,
+  	                	brand:title
+  	                	
+  	                },
+  	                function(data) {
+  	                     $("#content").html("抽象工厂已经生产出"+data);
+  	                        
+  	         });
+    	
+    		 
+  		  
+  	  });
+  	 
+  	  
+     	  $("#b2").click(function(){
+     		 
+     		 var url="factory/abstractfactory";
+     		 var title=$("#select").find("option:selected").val();
+     		
+     		 var thing = "Video";
+     		$.get(
+   	                url,
+   	                {
+   	                	product:thing,
+   	                	brand:title
+   	                	
+   	                },
+   	                function(data) {
+   	                     $("#content").html("抽象工厂已经生产出"+data);
+   	                        
+   	         });
+     	 });
+     		
+     		 $("#b3").click(function(){
+        		  
+        		 var url="factory/abstractfactory";
+        		 var title=$("#select").find("option:selected").val();
+        		
+        		 var thing = "Computer";
+        		$.get(
+      	                url,
+      	                {
+      	                	product:thing,
+      	                	brand:title
+      	                	
+      	                },
+      	                function(data) {
+      	                     $("#content").html("抽象工厂已经生产出"+data);
+      	                        
+      	         }); 
+      	  });
+     	
+     		 
+   		  
+   	
+     	 
+     	 
+     	
+     	 
+     	 
+    
+    })
+    </script>
+    
+    <style>
+    div{
+    margin-top:15px;
+    }
+    #div1{
+      position: absolute;
+      left: 100px;
+      top: 50px;
+     
+    }
+    button{
+    width:100px;
+    margin-right:10px;
+    
+    }
+    #content{
+    font-size:20px;
+    left:100px;
+    }
+    .text-primary{
+    font-size:20px;
+    left:100px;
+    }
+    #img{
+    position:absolute;
+    left:500px;
+    top:10px;
+    }
+    </style>
+</head>
+
+<body>
+
+
+
+<div id="img">
+<div><img src="../static/image/lzb.jpg"  th:src="@{/image/lzb.jpg}" width="300" height="300" /></div>
+<div><span class="text-primary" >201527010413 李志彬</span></div>
+</div>
+
+
+
+<div align="right" id="div1"> 
+
+<div id="d1">
+ <span class="text-primary" >抽象工厂页面</span>
+<select name="param" class="form-control" id="select">
+<option value="Huawei">华为</option>
+<option value="Xiaomi">小米</option>
+<option value="Apple">苹果</option>
+</select>  
+</div>
+
+<div id="d2">
+<button type="button" class="btn btn-default" id="b1">1&nbsp;&nbsp; 手机</button>
+<button type="button" class="btn btn-default" id="b2">2&nbsp;&nbsp; 电视</button>
+<button type="button" class="btn btn-default" id="b3">3&nbsp;&nbsp; 电脑</button>
+</div>
+
+
+
+
+<div>
+<span class="text-primary" id = "content">没有任何产品产生</span>
+</div>
+
+
+
+</div>
+  
+</body>
+</html>
